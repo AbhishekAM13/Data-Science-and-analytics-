@@ -1,0 +1,48 @@
+Dataset link : https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+
+This dataset contains credit card transactions from European cardholders over two days in September 2013.
+
+Total Rows: 284,807 transactions.
+Classes: The dataset is highly imbalanced, with 492 fraudulent transactions (Class 1) and 284,315 non-fraudulent transactions (Class 0).
+Features: 30 columns:
+'Time': The time between the first transaction and subsequent transactions (in seconds).
+'Amount': The transaction amount.
+'V1' to 'V28': Principal component analysis (PCA) transformed features for confidentiality.
+'Class': Target variable, where 1 represents fraud, and 0 represents non-fraud.
+Objective:
+The goal of this project is to develop machine learning models to detect fraudulent credit card transactions. The dataset is highly imbalanced, so specific techniques are applied to handle the imbalance and improve model performance.
+
+Workflow:
+Exploratory Data Analysis (EDA):
+
+Visualized the distribution of transaction amounts.
+Investigated the class imbalance and correlation between features.
+Performed analysis on the skewness of the 'Amount' and 'Time' columns.
+Data Preprocessing:
+
+Handled missing and infinite values (if any).
+Rescaled the 'Amount' column using StandardScaler to normalize it for model training.
+Split the data into training and testing sets (80% training, 20% testing).
+Handling Imbalanced Data:
+
+Various techniques such as undersampling and oversampling were applied to balance the class distribution.
+SMOTE (Synthetic Minority Over-sampling Technique) was attempted but not used in the final model.
+Model Building and Evaluation: Four machine learning models were built and compared:
+
+Logistic Regression
+Decision Tree
+Gradient Boosting
+XGBoost
+Performance Metrics:
+
+Accuracy
+Precision, Recall, and F1-score (especially for Class 1 - Fraud cases)
+Confusion Matrix to evaluate true positives, false negatives, etc.
+Key Results:
+
+XGBoost outperformed the other models, achieving high precision and recall for fraud detection, making it the most effective model for this dataset.
+Logistic Regression was simpler and had a decent performance, especially for non-fraud cases.
+Gradient Boosting was moderately effective but fell short of XGBoost.
+Decision Tree had the lowest performance, struggling with the highly imbalanced dataset.
+Conclusion:
+The XGBoost model provided the best results for detecting fraudulent transactions. Future improvements could include further fine-tuning of models and exploration of other imbalance-handling techniques.
